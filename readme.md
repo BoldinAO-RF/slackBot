@@ -33,18 +33,36 @@
 
 # Настройка перед запуском
 
-В файле index.js указать:
+В файле index.ts указать:
 
-token: можно взять на странице OAuth & Permissions настройки бота
+botToken: можно взять на странице OAuth & Permissions настройки бота
 
-name: имя бота которое указывали на 10 шаге при настройке бота
+botName: имя бота которое указывали на 10 шаге при настройке бота
 
+channel: название канала для общения с ботом
+
+также, необходимо указать следующие поля для запуска job в jenkins:
+
+username, token, jenkins_company
+	
+	для получения итоговой строки : var jenkins = jenkinsapi.init('https://username:token@jenkins.company.com');
+
+запустить команду tsc(дождаться компиляции)
+	
 
 # Установка пакетов
 
-1. npm i slackbots
+1. npm i
 
 
 # Запуск скрипта
 
-npm start
+npm run start
+
+# Чистка файлов после запуска
+
+npm run clear
+
+# Запуск из докера
+
+docker run --rm имя_сборки BotName BotToken ChannelForBot
